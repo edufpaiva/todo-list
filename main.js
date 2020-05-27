@@ -12,7 +12,7 @@ function listeners(){
 
     
 
-    $(".item").click(function (e) { 
+    $(".item-header").click(function (e) { 
         e.preventDefault();
         console.log(e);
         let id = e.target.id
