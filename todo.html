@@ -101,7 +101,9 @@
             /* border: 1px solid orangered; */
             position: fixed;
             margin: 10px 0 0 21%;
-            overflow: auto;
+            overflow-y: auto;
+            overflow-x: hidden;
+            max-height: 570px;
         }
         
         .item{
@@ -122,7 +124,7 @@
         }
 
         .item-body{
-            /* height: 27px; */
+            height: 27px;
             overflow-y: hidden;
             transition: all 700ms;
             background: #e2e2e2;
@@ -182,43 +184,15 @@
 
     </style>
     
-    <script type="text/javascript">
-
-        
-        
-    </script>
 
     <script src="./src/jquery-3.5.1.js"></script>
     <script src="./main.js"></script>
 
-
     <script>
-
         $(document).ready(function () {
-            $("#input").change(function (evt) { 
-                alert("blob")
-                console.log('evt');
-                console.log(evt);
-
-                var file = evt.target.files[0]
-
-                console.log(file);
-
-                $.ajax({
-                    type: "post",
-                    url: "./teste.php",
-                    data: {blob:'blob'},
-                    success: function (response) {
-                        console.log(response);
-                        
-                    }
-                });
-                // readTextFile(file)
-                
-            });
+            listeners()
         });
     </script>
-
 
 </head>
 <body>
@@ -237,9 +211,9 @@
 
     <div class="todo-list-container">
         <div class="item">
-            <div class="item-header">tarefa 01</div>
-            <div class="item-body">
-                <div class="item-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dictum at orci scelerisque accumsan. Aenean ut auctor turpis. Duis at massa ac nulla gravida vestibulum. Nulla ante magna, convallis vel sodales in, tincidunt eu risus. Maecenas tempus augue dolor, quis finibus arcu suscipit id. Praesent ultrices pretium velit in euismod. Duis at mi neque. Nunc sagittis vehicula nisl sit amet dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+            <div id="item-01-header" class="item-header">tarefa 01</div>
+            <div id="item-01-body" class="item-body">
+                <div id="item-01-description" class="item-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dictum at orci scelerisque accumsan. Aenean ut auctor turpis. Duis at massa ac nulla gravida vestibulum. Nulla ante magna, convallis vel sodales in, tincidunt eu risus. Maecenas tempus augue dolor, quis finibus arcu suscipit id. Praesent ultrices pretium velit in euismod. Duis at mi neque. Nunc sagittis vehicula nisl sit amet dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
                 <div  class="sub-item">
                     <div class="sub-item-header"><span  class="sub-item-check"><input type="checkbox"></span>tarefa</div>
                     <div class="sub-item-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dictum at orci scelerisque accumsan.</div>
@@ -268,13 +242,17 @@
         </div>
         
         <div class="item">
-            <div class="item-header">tarefa 02</div>
-            <div class="item-body">
-                <div class="item-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dictum at orci scelerisque accumsan. Aenean ut auctor turpis. Duis at massa ac nulla gravida vestibulum. Nulla ante magna, convallis vel sodales in, tincidunt eu risus. Maecenas tempus augue dolor, quis finibus arcu suscipit id. Praesent ultrices pretium velit in euismod. Duis at mi neque. Nunc sagittis vehicula nisl sit amet dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+            <div id="item-02-header" class="item-header">tarefa 01</div>
+            <div id="item-02-body" class="item-body">
+                <div id="item-02-description" class="item-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dictum at orci scelerisque accumsan. Aenean ut auctor turpis. Duis at massa ac nulla gravida vestibulum. Nulla ante magna, convallis vel sodales in, tincidunt eu risus. Maecenas tempus augue dolor, quis finibus arcu suscipit id. Praesent ultrices pretium velit in euismod. Duis at mi neque. Nunc sagittis vehicula nisl sit amet dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                
                 <div  class="sub-item">
-                    <div class="sub-item-header"><span  class="sub-item-check"><input type="checkbox"></span>tarefa</div>
+                    <div class="sub-item-header"><span  class="sub-item-check"><input type="checkbox"></span>tarefa 01</div>
                     <div class="sub-item-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dictum at orci scelerisque accumsan.</div>
                     <div class="sub-item-img-container">
+                        <!-- <img class="sub-item-img" src="https://static.thenounproject.com/png/601078-200.png" alt=""> -->
+                        <!-- <img class="sub-item-img" src="https://www.residentadvisor.net/images/promoter/ca-workinprogress.jpg" alt=""> -->
+
                     </div>
                     <div class="sub-item-file">
                         <a href="">arquivo</a>
