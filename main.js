@@ -1,5 +1,37 @@
 
-        
+class User{
+    constructor (name, matricula, email, todos = []){
+        this.name = name;
+        this.matricula = matricula;
+        this.email = email;
+        this.todos = todos;
+    }
+
+}
+
+class SubTodo{
+    constructor(id, name, description, isComplete = false, imgs = [], links = []){
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.isComplete = isComplete;
+        this.imgs = imgs;
+        this.links = links;
+    }
+}
+
+class Todo{
+    constructor(id, name, description, isComplete = false, subtodos = []){
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.isComplete = isComplete;
+        this.subtodos = subtodos;
+    }
+}
+
+
+
 function download(content, fileName, contentType) {
     var a = document.createElement("a");
     var file = new Blob([content], {type: contentType});
